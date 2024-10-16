@@ -69,5 +69,52 @@ document.getElementById("circle").addEventListener("click", function() {
             hiddenText.classList.add('hidden'); // Adiciona a classe para ocultar
         }
     });
-
+    const inputField = document.getElementById('inputField');
+    const submitButton = document.getElementById('submitButton');
+    const clearButton = document.getElementById('clearButton');
+    const form = document.getElementById('myForm');
+    
+    // Habilitar o botão somente se o campo de entrada não estiver vazio
+    inputField.addEventListener('input', () => {
+        if (inputField.value.trim() !== '') {
+            submitButton.classList.remove('disabled');
+            submitButton.disabled = false; // Habilita o botão
+        } else {
+            submitButton.classList.add('disabled');
+            submitButton.disabled = true; // Desabilita o botão
+        }
+    });
+    
+    // Lidar com o envio do formulário
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Impede o envio padrão do formulário
+    
+        // Aqui você pode fazer algo com os dados do formulário, como enviá-los via AJAX
+        console.log('Formulário enviado:', inputField.value);
+    
+        // Limpar o campo de entrada
+        inputField.value = '';
+    
+        // Desabilitar o botão novamente
+        submitButton.classList.add('disabled');
+        submitButton.disabled = true; // Desabilita o botão
+    });
+    
+    // Lidar com o clique do botão de limpar
+    clearButton.addEventListener('click', () => {
+        // Limpar o campo de entrada
+        inputField.value = '';
+    
+        // Desabilitar o botão de enviar
+        submitButton.classList.add('disabled');
+        submitButton.disabled = true; // Desabilita o botão
+    });
+    
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();  // Previne o comportamento padrão de envio do formulário
+        // Exibir a mensagem de sucesso
+        document.getElementById('submitSuccessMessage').classList.remove('d-none');
+        // Limpa o formulário
+        document.getElementById('contactForm').reset();
+    });
 
