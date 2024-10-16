@@ -51,8 +51,7 @@
     <section class="page-section" id="services">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Introdução</h2>
-                <h3 class="section-subheading text-muted">Definição das placas tectônicas:</h3>
+                <h2 class="section-heading text-uppercase">Placas tectônicas</h2>
             </div>
             <div class="row text-center">
                 <div class="col-md-4">
@@ -252,22 +251,37 @@
                             <h4 class="subheading">Continentes atuais</h4>
                         </div>
                         <div class="timeline-body">
-                            <p class="text-muted">DIvisão continental tal como conhecemos hoje, com os continentes:
+                            <p class="text-muted">Divisão continental tal como conhecemos hoje, com os continentes:
                                 América, Europa, África, Ásia, Oceania e Antártida. Também houve a formação dos
                                 seguintes oceanos: Pacífico, Atlântico, Índico, Glacial Ártico e Glacial Antártico.</p>
                         </div>
                     </div>
                 </li>
-                <li class="timeline-inverted">
-                    <div class="timeline-image">
-                        <h4>
-                            Próximas
-                            <br />
-                            mudanças?
-                        </h4>
-                    </div>
-                </li>
-            </ul>
+                <ul class="timeline">
+                    <li class="timeline-inverted">
+                        <div class="timeline-image" id="circle" style="cursor: pointer;">
+                            <h4>
+                                Próximas
+                                <br />
+                                mudanças
+                            </h4>
+                        </div>
+                        <div id="hiddenText" class="hidden">
+                            <p class="prox-mud">Cientistas estão focados em entender e mitigar os impactos<br> das erupções vulcânicas,
+                                utilizando
+                                tecnologias como sensores<br> sísmicos e modelagem computacional para prever atividades<br>
+                                vulcânicas.
+                                Eles desenvolvem sistemas de alerta e planos de evacuação <br>para proteger comunidades
+                                vulneráveis.
+                                Além disso, estudam o magma<br> para prever erupções e colaboram internacionalmente para
+                                compartilhar <br>dados. A pesquisa também se concentra nos efeitos das erupções no clima<br> e
+                                no meio
+                                ambiente, visando transformar o medo em conhecimento que salve<br> vidas.</p>
+                        </div>
+                    </li>
+                    
+                    
+                </ul>
         </div>
     </section>
     <!-- Team-->
@@ -350,7 +364,7 @@
                             <!-- Message input-->
                             <textarea class="form-control" id="message" placeholder="Escreva uma mensagem"
                                 data-sb-validations="required"></textarea>
-                            <div class="invalid-feedback" data-sb-feedback="message:required">Insira uma mensagem!</div>
+                            <div class="invalid-feedback">Insira uma mensagem!</div>
                         </div>
                     </div>
                 </div>
@@ -685,11 +699,11 @@
                                     climáticos, agora agravados pela atividade geológica da região.
                                 </p>
 
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                        type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Fechar
-                                    </button>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Fechar
+                                </button>
                             </div>
                         </div>
                     </div>

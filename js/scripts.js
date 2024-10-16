@@ -1,3 +1,4 @@
+
 /*!
 * Start Bootstrap - Agency v7.0.12 (https://startbootstrap.com/theme/agency)
 * Copyright 2013-2023 Start Bootstrap
@@ -52,3 +53,21 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+document.getElementById("circle").addEventListener("click", function() {
+    var hiddenText = document.getElementById("hiddenText");
+    hiddenText.classList.toggle("show");
+});
+
+    document.getElementById('circle').addEventListener('click', function() {
+        var hiddenText = document.getElementById('hiddenText');
+        if (hiddenText.classList.contains('hidden')) {
+            hiddenText.classList.remove('hidden'); // Remove a classe de ocultação
+            hiddenText.classList.add('visible'); // Adiciona a classe para exibir
+        } else {
+            hiddenText.classList.remove('visible'); // Remove a classe de exibição
+            hiddenText.classList.add('hidden'); // Adiciona a classe para ocultar
+        }
+    });
+
+

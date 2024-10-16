@@ -2821,6 +2821,20 @@ textarea.form-control-lg {
   background-color: var(--bs-btn-bg);
   border-color: var(--bs-btn-border-color);
 }
+
+.hidden {
+  max-height: 0; /* Começa com altura zero */
+  overflow: hidden; /* Oculta o excesso */
+  opacity: 0; /* Começa invisível */
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Efeito de transição */
+}
+
+.visible {
+  max-height: 200px; /* Altura máxima quando visível (ajuste conforme necessário) */
+  opacity: 1; /* Torna visível */
+}
+
+
 .btn:focus-visible {
   color: var(--bs-btn-hover-color);
   background-color: var(--bs-btn-hover-bg);
@@ -8100,6 +8114,10 @@ textarea.form-control-lg {
   color: #6c757d !important;
 }
 
+.prox-mud{
+  --bs-text-opacity: 1;
+  color: #6c757d !important;
+}
 .text-black-50 {
   --bs-text-opacity: 1;
   color: rgba(0, 0, 0, 0.5) !important;
