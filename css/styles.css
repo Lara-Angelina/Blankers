@@ -11294,10 +11294,12 @@ section#contact form#contactForm .form-group {
   margin-bottom: 1.5rem;
 }
 section#contact form#contactForm .form-group input,
+section#contact form#contactForm .form-group select,
 section#contact form#contactForm .form-group textarea {
   padding: 1.25rem;
 }
-section#contact form#contactForm .form-group input.form-control {
+section#contact form#contactForm .form-group input.form-control,
+section#contact form#contactForm .form-group select.form-control {
   height: auto;
 }
 section#contact form#contactForm .form-group-textarea {

@@ -267,20 +267,27 @@
                             </h4>
                         </div>
                         <div id="hiddenText" class="hidden">
-                            <p class="prox-mud">Cientistas estão focados em entender e mitigar os impactos<br> das erupções vulcânicas,
-                                utilizando
-                                tecnologias como sensores<br> sísmicos e modelagem computacional para prever atividades<br>
-                                vulcânicas.
-                                Eles desenvolvem sistemas de alerta e planos de evacuação <br>para proteger comunidades
-                                vulneráveis.
-                                Além disso, estudam o magma<br> para prever erupções e colaboram internacionalmente para
-                                compartilhar <br>dados. A pesquisa também se concentra nos efeitos das erupções no clima<br> e
-                                no meio
-                                ambiente, visando transformar o medo em conhecimento que salve<br> vidas.</p>
+                            <div class="timeline-panel">
+                                <p class="prox-mud">Cientistas estão focados em entender e mitigar os impactos das
+                                    erupções vulcânicas,
+                                    utilizando
+                                    tecnologias como sensores sísmicos e modelagem computacional para prever
+                                    atividades
+                                    vulcânicas.
+                                    Eles desenvolvem sistemas de alerta e planos de evacuação para proteger
+                                    comunidades
+                                    vulneráveis.
+                                    Além disso, estudam o magma para prever erupções e colaboram internacionalmente
+                                    para
+                                    compartilhar dados. A pesquisa também se concentra nos efeitos das erupções no
+                                    clima e
+                                    no meio
+                                    ambiente, visando transformar o medo em conhecimento que salve vidas.</p>
+                            </div>
                         </div>
                     </li>
-                    
-                    
+
+
                 </ul>
         </div>
     </section>
@@ -352,8 +359,14 @@
                         </div>
                         <div class="form-group mb-md-0">
                             <!-- Phone number input-->
-                            <input class="form-control" id="phone" type="tel" placeholder="Sua nota"
-                                data-sb-validations="required" />
+                            <select class="form-control" id="phone" data-sb-validations="required">
+                                <option value="" disabled selected>Escolha uma nota</option>
+                                <option value="1">★☆☆☆☆</option>
+                                <option value="2">★★☆☆☆</option>
+                                <option value="3">★★★☆☆</option>
+                                <option value="4">★★★★☆</option>
+                                <option value="5">★★★★★</option>
+                            </select>
                             <div class="invalid-feedback" data-sb-feedback="phone:required">Insira uma nota!</div>
                         </div>
                     </div>
@@ -382,9 +395,9 @@
                     <div class="text-center text-danger mb-3">Erro ao enviar o feedback!</div>
                 </div>
                 <!-- Submit Button-->
-                <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase"
-                        id="submitButton" type="submit" >Enviar</button></div>
-                        
+                <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton"
+                        type="submit">Enviar</button></div>
+
             </form>
         </div>
     </section>
