@@ -8,6 +8,7 @@
 // Scripts
 // 
 
+
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
@@ -74,47 +75,70 @@ document.getElementById("circle").addEventListener("click", function() {
     const clearButton = document.getElementById('clearButton');
     const form = document.getElementById('myForm');
     
-    // Habilitar o botão somente se o campo de entrada não estiver vazio
-    inputField.addEventListener('input', () => {
-        if (inputField.value.trim() !== '') {
-            submitButton.classList.remove('disabled');
-            submitButton.disabled = false; // Habilita o botão
-        } else {
-            submitButton.classList.add('disabled');
-            submitButton.disabled = true; // Desabilita o botão
+    window.addEventListener('DOMContentLoaded', event => {
+        // Função para validar o formulário
+        function validateForm() {
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const rating = document.getElementById('rating');
+            let isValid = true;
+    
+            // Validação do nome
+            if (name.value.trim() === "") {
+                name.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                name.classList.remove('is-invalid');
+            }
+    
+            // Validação do email
+            if (email.value.trim() === "" || !validateEmail(email.value)) {
+                email.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                email.classList.remove('is-invalid');
+            }
+    
+            // Validação da nota
+            if (rating.value === "") {
+                rating.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                rating.classList.remove('is-invalid');
+            }
+    
+    
+            return isValid;
         }
+    
+        // Função auxiliar para validar email
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+    
+        // Lidar com o envio do formulário
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevenir envio padrão do formulário
+    
+            // Se o formulário for válido
+            if (validateForm()) {
+                // Exibir mensagem de sucesso
+                document.getElementById('submitSuccessMessage').classList.remove('d-none');
+                document.getElementById('submitErrorMessage').classList.add('d-none');
+    
+                // Limpar o formulário
+                this.reset();
+    
+                // Remover classes de validação (invalid feedback)
+                const inputs = this.querySelectorAll('.form-control');
+                inputs.forEach(input => input.classList.remove('is-invalid'));
+    
+            } else {
+                // Exibir mensagem de erro
+                document.getElementById('submitErrorMessage').classList.remove('d-none');
+                document.getElementById('submitSuccessMessage').classList.add('d-none');
+            }
+        });
     });
     
-    // Lidar com o envio do formulário
-    form.addEventListener('submit', (event) => {
-        event.preventDefault(); // Impede o envio padrão do formulário
-    
-        // Aqui você pode fazer algo com os dados do formulário, como enviá-los via AJAX
-        console.log('Formulário enviado:', inputField.value);
-    
-        // Limpar o campo de entrada
-        inputField.value = '';
-    
-        // Desabilitar o botão novamente
-        submitButton.classList.add('disabled');
-        submitButton.disabled = true; // Desabilita o botão
-    });
-    
-    // Lidar com o clique do botão de limpar
-    clearButton.addEventListener('click', () => {
-        // Limpar o campo de entrada
-        inputField.value = '';
-    
-        // Desabilitar o botão de enviar
-        submitButton.classList.add('disabled');
-        submitButton.disabled = true; // Desabilita o botão
-    });
-    
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault();  // Previne o comportamento padrão de envio do formulário
-        // Exibir a mensagem de sucesso
-        document.getElementById('submitSuccessMessage').classList.remove('d-none');
-        // Limpa o formulário
-        document.getElementById('contactForm').reset();
-    });
-

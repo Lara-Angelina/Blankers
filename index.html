@@ -16,6 +16,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+    <script>
+
+    </script>
 </head>
 
 <body id="page-top">
@@ -328,79 +331,70 @@
     </section>
     <!-- Clients-->
 
-    <!-- Contact-->
-    <section class="page-section" id="contact">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase">Contato</h2>
-            </div>
-            <!-- * * * * * * * * * * * * * * *-->
-            <!-- * * SB Forms Contact Form * *-->
-            <!-- * * * * * * * * * * * * * * *-->
-            <!-- This form is pre-integrated with SB Forms.-->
-            <!-- To make this form functional, sign up at-->
-            <!-- https://startbootstrap.com/solution/contact-forms-->
-            <!-- to get an API token!-->
-            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                <div class="row align-items-stretch mb-5">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <!-- Name input-->
-                            <input class="form-control" id="name" type="text" placeholder="Seu Nome"
-                                data-sb-validations="required" />
-                            <div class="invalid-feedback" data-sb-feedback="name:required">Insira seu nome!</div>
-                        </div>
-                        <div class="form-group">
-                            <!-- Email address input-->
-                            <input class="form-control" id="email" type="email" placeholder="Seu Email"
-                                data-sb-validations="required,email" />
-                            <div class="invalid-feedback" data-sb-feedback="email:required">Insira seu email!</div>
-                            <div class="invalid-feedback" data-sb-feedback="email:email">Email não válido!</div>
-                        </div>
-                        <div class="form-group mb-md-0">
-                            <!-- Phone number input-->
-                            <select class="form-control" id="phone" data-sb-validations="required">
-                                <option value="" disabled selected>Escolha uma nota</option>
-                                <option value="1">★☆☆☆☆</option>
-                                <option value="2">★★☆☆☆</option>
-                                <option value="3">★★★☆☆</option>
-                                <option value="4">★★★★☆</option>
-                                <option value="5">★★★★★</option>
-                            </select>
-                            <div class="invalid-feedback" data-sb-feedback="phone:required">Insira uma nota!</div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group form-group-textarea mb-md-0">
-                            <!-- Message input-->
-                            <textarea class="form-control" id="message" placeholder="Escreva uma mensagem"></textarea>
-                            <div class="invalid-feedback">Insira uma mensagem!</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Submit success message-->
-                <!---->
-                <!-- This is what your users will see when the form-->
-                <!-- has successfully submitted-->
-                <div class="d-none" id="submitSuccessMessage">
-                    <div class="text-center text-white mb-3">
-                        <div class="fw-bolder">Seu feedback foi enviado com sucesso!</div>
-                    </div>
-                </div>
-                <!-- Submit error message-->
-                <!---->
-                <!-- This is what your users will see when there is-->
-                <!-- an error submitting the form-->
-                <div class="d-none" id="submitErrorMessage">
-                    <div class="text-center text-danger mb-3">Erro ao enviar o feedback!</div>
-                </div>
-                <!-- Submit Button-->
-                <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton"
-                        type="submit">Enviar</button></div>
-
-            </form>
+ <!-- Contact-->
+<section class="page-section" id="contact">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Contato</h2>
         </div>
-    </section>
+        <!-- Mensagem de Sucesso -->
+        <div class="alert alert-success d-none" id="submitSuccessMessage">
+            Seu feedback foi enviado com sucesso!
+        </div>
+        <!-- Mensagem de Erro -->
+        <div class="alert alert-danger d-none" id="submitErrorMessage">
+            Erro ao enviar o feedback! Por favor, tente novamente.
+        </div>
+        <form id="contactForm" novalidate>
+            <div class="row align-items-stretch mb-5">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <!-- Name input-->
+                        <input class="form-control" id="name" name="name" type="text" placeholder="Seu Nome" required />
+                        <div class="invalid-feedback">
+                            Insira seu nome!
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- Email address input-->
+                        <input class="form-control" id="email" name="email" type="email" placeholder="Seu Email" required />
+                        <div class="invalid-feedback" id="invalidEmail">
+                            Insira um email válido!
+                        </div>
+                    </div>
+                    <div class="form-group mb-md-0">
+                        <!-- Rating input-->
+                        <select class="form-control" id="rating" name="rating">
+                            <option value="" disabled selected>Escolha uma nota</option>
+                            <option value="1">★☆☆☆☆</option>
+                            <option value="2">★★☆☆☆</option>
+                            <option value="3">★★★☆☆</option>
+                            <option value="4">★★★★☆</option>
+                            <option value="5">★★★★★</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Insira uma nota!
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-textarea mb-md-0">
+                        <!-- Message input-->
+                        <textarea class="form-control" id="message" name="message" placeholder="Escreva uma mensagem" required></textarea>
+                        <div class="invalid-feedback">
+                            Insira uma mensagem!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Submit Button-->
+            <div class="text-center">
+                <button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+</section>
+
     <!-- Footer-->
     <footer class="footer py-4">
         <div class="container">
@@ -567,34 +561,8 @@
                                 <p class="item-intro text-muted">Descubra como estão ligadas diretamente as placas
                                     tectônicas!</p>
                                 <img class="img-fluid2 d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..." />
-                                <p>O movimento tectônico é responsável pela disposição atual dos continentes e oceanos.
-                                    Durante o período Paleozoico e Mesozoico, todos os continentes estavam unidos em uma
-                                    única massa terrestre chamada Pangeia. Com o movimento das placas ao longo de
-                                    milhões de anos, Pangeia se fragmentou, criando os continentes que conhecemos
-                                    hoje.<br>
-                                    <a
-                                        href="https://link.springer.com/article/10.1007/s11430-022-9947-6">​(SpringerLink)</a>
-                                    <a href="https://education.nationalgeographic.org/resource/earths-tectonic-plates/">
-                                        ​(National Geographic Society)</a><br><br>
-                                    Esse processo de separação continua em andamento, com os continentes ainda se
-                                    movendo. A África, por exemplo, está se dividindo lentamente ao longo do Rift do
-                                    Leste Africano, um sistema de falhas geológicas que eventualmente pode criar um novo
-                                    oceano.<br><br>
-
-                                    A expansão do fundo oceânico nas dorsais oceânicas também desempenha um papel
-                                    crucial. Nas dorsais meso-oceânicas, como a que atravessa o Atlântico, a crosta
-                                    oceânica se expande à medida que o magma sobe das profundezas do manto e resfria,
-                                    criando novas rochas. Esse processo está causando a expansão do Atlântico, enquanto
-                                    o Oceano Pacífico está diminuindo, devido à subducção de suas margens sob as placas
-                                    continentais circundantes
-                                    <br>
-                                    <a href="https://education.nationalgeographic.org/resource/earths-tectonic-plates/">​(National
-                                        Geographic Society)</a> <br><br>
-
-                                    Outro ponto interessante é o impacto do movimento tectônico sobre os ecossistemas. À
-                                    medida que os continentes se afastam ou colidem, as mudanças na topografia e nos
-                                    padrões climáticos forçam as espécies a se adaptarem ou migrarem, influenciando
-                                    diretamente a evolução da vida no planeta.
+                                <p>
+                                    As placas tectônicas formam montanhas através de um processo chamado orogênese, que ocorre quando duas ou mais placas tectônicas se chocam ou se aproximam. Esse coque provoca o levantamento das áreas, dando origem a dobramentos e grandes cadeias de montanhas.
                                 </p>
 
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
